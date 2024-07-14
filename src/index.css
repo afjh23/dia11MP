@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* headers */
+
+header{
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  width: 1248px;
+  min-height: 57px;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.search{
+  margin-left: auto ;
+  width: 297px;
+  border-radius: 16px;
+  height: 55px;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  position: relative;
+}
+
+
+.input-location{
+  width: 140px;
+  border: none;
+  border-radius: 16px;
+  height: 53px;
+  text-align: center;
+}
+
+.input-guest{
+
+  border: none;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;;
+  width: 100px;
+  height: 53px;
+  text-align: center;
+}
+
+.search-lupa {
+  width: 57px;
+  height: 53px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.search-lupa img {
+  width: 17px; /* Tamaño de la imagen */
+  height: 17px;
+  margin: 0 auto;
+}
+
+
+
+
+
+/* cards */
+.card-list {
+  width: 1248px;
+  margin: 7px auto;
+  height: 950px;
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  
+}
+
+.card-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 12px;
+  column-gap: 12px;
+}
+
+.card-list li {
+  margin-bottom: 20px;
+}
+
+
+/* card */
+.card-list article {
+  
+  width: 394px;
+  height: 344px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-list img {
+  
+  width: 394px;
+  height: 267px;
+  
+  border-radius: 24px;
+  border: 1px solid #ddd;
+}
+
+/* descripcion */
+.card-list .description{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  
+}
+.super-host{
+  width: 100px;
+  height: 28px;
+  border: 2px solid #4F4F4F;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.super-host span{
+  font-size: 12px;
+  font-weight: 700;
+  margin: auto;
+}
+.card-list p {
+  color: #828282;
+  font-size: 14px
+}
+
+.card-list .punctuation{
+  margin-left: auto;
+}
+
+.card-list .rating {
+  font-size: 14px;
+  color: #4F4F4F;
+}
+.rating-star {
+  font-size: 15.7px; /* Tamaño de la estrella */
+  color: #EB5757; /* Color de la estrella */
+}
+
+/* el titulo  */
+.card-list h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 0;
+  color:#333333
+}
+.card-list .super-host, .card-list .type, .card-list .beds {
+  display: inline-block;
+  
+}
+
+
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(79, 79, 79, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  width: 100%;
+  height: 460px;
+}
