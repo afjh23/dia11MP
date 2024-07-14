@@ -1,0 +1,158 @@
+.modal {
+
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(79, 79, 79, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  width: 100%;
+  height: 460px;
+  padding-top: 93px;
+}
+
+.modal-inputs {
+    margin: 0 auto;
+    width: 1248px;
+    height: 55px;
+    display: flex;
+
+    flex-direction: row;
+}
+.modal-inputs span{
+    font-size: 9px;
+    font-weight: 800;
+    height: 11px;
+}
+
+.modal-inputs input{
+    border: none;
+    width: 425px;
+    height: 18px;
+    font-size: 14px;
+}
+
+.modal-inputs input:focus{
+    border-color:transparent;
+    outline: none;
+}
+
+.modal-inputs div{
+    width: 425px;
+    height: 55px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-inputs button{
+    width: 127px;
+    height: 48px;
+    background-color: #EB5757;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    display: flex;
+    
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.modal-inputs img{
+    width: 17px;
+    filter: invert(100%) brightness(100%);
+}
+
+.search-button span{
+    margin-left: .3rem;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.modal-values{
+    width: 1248px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    
+}
+.values-location {
+    width: 425px;
+}
+.modal-values ul{
+    list-style: none;
+}
+
+.modal-values li{
+    display: flex;
+    flex-direction: row;
+}
+.modal-values img{
+    width: 14px;
+    height: 19px;
+}
+
+.modal-values span{
+    height: 18px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #4f4f4f;
+}
+
+.values-guests{    
+    width: 425px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.values-guests button{
+    width: 21px;
+    height: 21px;
+    border: 2px solid #82828282;
+    background-color: transparent;
+    color: #82828282;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.values-guests span{
+    width: 42px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.values-guests div{
+    margin-top: 6px;
+    margin-bottom: 2rem;
+
+}
+
+.values-guests p{
+    font-size: 14px;
+    height: 17.6px;
+    margin: 1px 0;
+}
+
+.guests-type {
+    font-weight: 700;
+    color: #333333;
+}
+
+.guests-age {
+    font-weight: 400;
+    color: #bdbdbd; 
+}

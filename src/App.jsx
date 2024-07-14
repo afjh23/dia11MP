@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import datajs from './assets/stays.json'
 import './App.css'
+import { Modal } from './components/Modal'
 
 function App() {
   const [data, setData] = useState(datajs)
@@ -12,7 +13,7 @@ function App() {
   }
   return (
     <>
-      {openModal && <div className='modal'><div className='modal-content'></div></div>}
+      {openModal && <Modal></Modal>}
       <div className='container'>
         <header>
           <figure><img src='logo.png' /></figure>
@@ -34,7 +35,7 @@ function App() {
                     <img src={x.photo} />
                   </figure>
                   <div className='description'>
-                    <div >
+                    <div className='detailed'>
                       {x.superHost && <div className='super-host'><span>SUPER HOST</span></div>}
                       <div className='type'> <p>{x.type}</p></div>
                       <div className='beds'>  <p>.{x.beds}</p></div>
