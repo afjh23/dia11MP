@@ -9,11 +9,11 @@ function App() {
   const [openModal,setOpenModal] = useState(false)
 
   function toggleModal(){
-    setOpenModal(true)
+    setOpenModal(!openModal)
   }
   return (
     <>
-      {openModal && <Modal></Modal>}
+      {openModal && <Modal toggleModal={toggleModal}></Modal>}
       <div className='container'>
         <header>
           <figure><img src='logo.png' /></figure>
