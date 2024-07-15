@@ -36,6 +36,10 @@ header{
   overflow: hidden;
 }
 
+.search input:focus{
+  border-color:transparent;
+  outline: none;
+}
 
 .input-location{
   width: 140px;
