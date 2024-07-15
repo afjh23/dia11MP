@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import datajs from './assets/stays.json'
 import './App.css'
 import { Modal } from './components/Modal'
+import { CardList } from './components/CardList'
+import { Nav } from './components/Nav'
 
 function App() {
   const [data, setData] = useState(datajs)
@@ -51,50 +53,9 @@ function App() {
     <>
       {openModal && <Modal toggleModal={toggleModal} data={data} setStay={setStay} setLocations={setLocations} guests={guests} setGuests={setGuests} locations={locations} setGuestsValues={setGuestsValues} guestsValues={guestsValues}></Modal>}
       <div className='container'>
-        <header>
-          <figure><img src='logo.png' /></figure>
-          <div className='search'  onClick={toggleModal}>
-            <input className='input-location' value={locations} placeholder='Add Location' />
-            <input className='input-guest' placeholder='Add Guest'  value={guests}/>
-            <figure className='search-lupa'><img src='lupa.svg'></img></figure>
-          </div>
-        </header>
+        <Nav toggleModal={toggleModal} locations={locations} guests={guests}></Nav>
         <main>
-          <section className='card-list'>
-            <h1> Stays in </h1>
-            <ul>
-
-              {stay?.map((x, i) =>
-              (<li key={i}>
-                <article>
-                  <figure>
-                    <img src={x.photo} />
-                  </figure>
-                  <div className='description'>
-                    <div className='detailed'>
-                      {x.superHost && <div className='super-host'><span>SUPER HOST</span></div>}
-                      <div className='type'> <p>{x.type}</p></div>
-                      <div className='beds'>  <p>.{x.beds}</p></div>
-                    </div>
-                    <div className='punctuation'>
-                      <span className="rating-star">★</span>
-                      <span className="rating"> {x.rating}</span>
-                    </div>
-                  </div>
-
-                  <h2>{x.title}</h2>
-                </article>
-              </li>)
-
-
-              )
-
-              }
-
-
-
-            </ul>
-          </section>
+          <CardList stay={stay}></CardList>
         </main>
         <footer></footer>
       </div>

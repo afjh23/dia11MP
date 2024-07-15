@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, Children } from 'react';
 import './modal.css';
 
 export const Modal = ({ data, locations, guests, setLocations, setGuests, toggleModal, guestsValues,setGuestsValues }) => {
+    const [openValues, setOpenValues] = useState({guests: false, location: false}) 
     const modalRef = useRef(null);
     const locationCountry = [...new Set(data.map(guest => `${guest.city},${guest.country}`))].map(guest => guest.split(','))
 
@@ -20,6 +21,10 @@ export const Modal = ({ data, locations, guests, setLocations, setGuests, toggle
         setStay(rs) */
     }
 
+    const toggleOpenValues = (type) => {
+        setOpenValues((prevOpen) => ({...prevOpen, [type]:!prevOpen[type] }))
+    }
+
     const handleGuests = (type, value) => {
         if ((guestsValues[type] || 0) + value >= 0) {
             setGuestsValues((prevGuestsValues) => {
@@ -36,11 +41,11 @@ export const Modal = ({ data, locations, guests, setLocations, setGuests, toggle
         <div className='modal' onClick={handleClickOutside}>
             <div className='modal-content' ref={modalRef} onClick={(e) => e.stopPropagation()}>
                 <div className='modal-inputs'>
-                    <div className='modal-location'>
+                    <div className='modal-location' onClick={() => toggleOpenValues('location')}>
                         <span>LOCATION</span>
                         <input placeholder='Add Location' value={locations} />
                     </div>
-                    <div className='modal-guests'>
+                    <div className='modal-guests' onClick={() => toggleOpenValues('guests')}>
                         <span>GUESTS</span>
                         <input placeholder='Add Guests' value={guests}/>
                     </div>
@@ -51,6 +56,7 @@ export const Modal = ({ data, locations, guests, setLocations, setGuests, toggle
                 </div>
                 <div className='modal-values'>
                     <div className='values-location'>
+                       { openValues.location &&
                         <ul>
                             {
                                 locationCountry.map(city =>
@@ -66,22 +72,28 @@ export const Modal = ({ data, locations, guests, setLocations, setGuests, toggle
 
 
                         </ul>
+                        }
                     </div>
                     <div className='values-guests'>
-                        <p className='guests-type'>Adults</p>
-                        <p className='guests-age'>Ages 13 or above</p>
-                        <div>
-                            <button onClick={() => handleGuests('adults', -1)}>-</button>
-                            <span>{guestsValues.adults}</span>
-                            <button onClick={() => handleGuests('adults', +1)}>+</button>
-                        </div>
-                        <p className='guests-type'>Children</p>
-                        <p className='guests-age'>Ages 2 - 12</p>
-                        <div>
-                            <button onClick={() => handleGuests('children', -1)}>-</button>
-                            <span>{guestsValues.children}</span>
-                            <button onClick={() => handleGuests('children', +1)}>+</button>
-                        </div>
+                        {openValues.guests &&  
+                            <>
+                            <p className='guests-type'>Adults</p>
+                            <p className='guests-age'>Ages 13 or above</p>
+                            <div>
+                                <button onClick={() => handleGuests('adults', -1)}>-</button>
+                                <span>{guestsValues.adults}</span>
+                                <button onClick={() => handleGuests('adults', +1)}>+</button>
+                            </div>
+                            <p className='guests-type'>Children</p>
+                            <p className='guests-age'>Ages 2 - 12</p>
+                            <div>
+                                <button onClick={() => handleGuests('children', -1)}>-</button>
+                                <span>{guestsValues.children}</span>
+                                <button onClick={() => handleGuests('children', +1)}>+</button>
+                            </div> </>
+                            
+                        }
+                        
                     </div>
                 </div>
             </div>
